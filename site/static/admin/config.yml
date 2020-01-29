@@ -15,9 +15,18 @@ collections: # A list of collections the CMS should be able to edit
       - {label: "Intro Blurb", name: "description", widget: "text"}
       - {label: "Image", name: "image", widget: "image", required: false}
       - {label: "Body", name: "body", widget: "markdown"}
+  - name: "speakers" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Speakers" # Used in the UI, ie.: "New Post"
+    folder: "site/content/speakers" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Intro Blurb yeah", name: "description", widget: "text"}
+      - {label: "Billede", name: "image", widget: "image", required: false}
+      - {label: "Indhold", name: "body", widget: "markdown"}
   - name: "pages"
     label: "Pages"
-    create: true # Allow users to create new documents in this collection
     files:
       - file: "site/content/_index.md"
         label: "Home Page"
